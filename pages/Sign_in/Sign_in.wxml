@@ -1,2 +1,69 @@
-<!--pages/Sign_in/Sign_in.wxml-->
-<text>静待开发...</text>
+<view class="all">
+  <view class="bar">
+    <!-- 上个月 -->
+    <view class="previous" bindtap="handleCalendar" data-handle="prev">
+      <image src="../../icon/arrow-left.png"></image>
+    </view>
+    <!-- 显示年月 -->
+    <view>{{curr_year || "--"}} 年 {{curr_month || "--"}} 月</view>
+    <!-- 下个月 -->
+    <view class="next"  bindtap="handleCalendar" data-handle="next">
+      <image src="../../icon/arrow-right.png"></image>
+    </view>
+  </view>
+
+  <!-- 显示周 -->
+  <view class="week">
+    <view wx:for="{{weeks_ch}}" wx:key="week">{{item}}</view>
+  </view>
+  <!-- <view>  year: {{thisYear}},month:{{thisMonth}},day:{{thisDay}}</view> -->
+  <!-- 显示天 -->
+  <view class="days">
+    <!-- 以 2020.02 为例 -->
+    <!-- 列 -->
+    <!-- <view>{{days}}</view> -->
+    <view class="columns" wx:for="{{days.length/7}}" wx:for-index="i" wx:key="i"><!-- 行i = 0,1,2,3,4 -->
+      <view wx:for="{{days}}" wx:for-index="j" wx:key="j"><!-- days数 j = 0 ... 34-->
+      
+        <!-- 行 -->
+        <view class="rows" wx:if="{{j/7 == i}}">
+          <view class="rows" wx:for="{{7}}" wx:for-index="k" wx:key="k"><!-- 星期数k = 0 ... 6 -->
+
+            <!-- 每个月的空单元格 -->
+            <view class="cell" wx:if="{{days[j+k].date == null}}">
+              <text decode="{{true}}">&nbsp;&nbsp;</text>
+            </view>
+
+            <!-- 每月的有数字单元格 -->
+            <view class="cell" wx:else>
+
+              <!-- <view wx:if="curr_year == year && curr_month == month">
+               
+                <view wx:if="days[j+k].date == thisDay" style='color: black'>
+                  <view> {{days[j+k].date}}={{thisDay}}</view>
+                </view>
+                <view wx:else style="color:yellow">{{days[j+k].date}}</view>
+              </view> 
+              问题：显示‘今天’失败。
+              原因：wx:if="days[j+k].date == thisDay" 数组的下标不能记录下来
+              -->
+
+              <view wx:if="{{days[j+k].isSign == true}}" style='background-color:red'>
+                <text>{{days[j+k].date}}</text>
+              </view>
+              <view wx:else>
+                <text>{{days[j+k].date}}</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>    
+    </view>
+  </view>
+</view>
+
+<!-- <view>{{curr_year}},  {{curr_month}}</view> -->
+<!-- <view>{{days.length}}</view>
+<view wx:for="{{days.length/7}}" wx:for-index="i" wx:key="i">i = {{i}}</view>
+<view wx:for="{{days}}" wx:for-index="j" wx:key="j">j = {{j}}</view>
+ -->
