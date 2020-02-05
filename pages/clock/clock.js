@@ -18,7 +18,7 @@ Page({
       selectShow: false,
       selectArray: [{
         "id": "0",
-        "text": "自动牙刷"
+        "text": "电动牙刷"
       }, {
         "id": "1",
         "text": "普通牙刷"
