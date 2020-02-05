@@ -8,7 +8,7 @@
     <view class='swiper_con'>
       <view bindtap="toast" class="usermotto">
             <image id="p_1"
-            src="https://wx2.sinaimg.cn/mw690/007RARhYly1gbetkywlevj30go0goaa9.jpg"/>
+            src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/007RARhYly1gbetkywlevj30go0goaa9.png?sign=07cbfd8523fa141dd89951e561ecc531&t=1580910453"/>
             <text id="check_1">打卡</text>
         </view>
         <!-- 倒计时 -->
@@ -20,8 +20,8 @@
       </view>
       <!-- 倒计时 -->
       <!-- 音频 -->
-      <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
-      
+      <!-- <audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio> -->
+      <image bindtap="begin" class="start_" src="../../icon/trumpet.png" ></image>
       <!-- 选择框 -->
       <view class="choice">
         <text class="_type">请选择牙刷类型</text>
@@ -34,7 +34,7 @@
       <view class='swiper_con'>
         <view bindtap="toast" class="usermotto">
             <image id="p_2" 
-            src="https://wx1.sinaimg.cn/mw690/007RARhYly1gbevf9wpzfj301s01s3y9.jpg"/>
+            src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/007RARhYly1gbevf9wpzfj301s01s3y9.png?sign=6099062c59a91404b15df25c01abf0e5&t=1580911204"/>
             <text id="check">打卡</text>
         </view>
          <!-- 倒计时 -->
@@ -45,8 +45,9 @@
         </view>
       </view>
       <!-- 倒计时 -->
-      <!-- 音频 -->
-      
+       <!-- 音频 -->
+      <!-- <audio poster="{{Poster}}" name="{{Name}}" author="{{Author}}" src="{{Src}}" id="myAudio" controls loop></audio> -->
+      <image bindtap="Begin" class="start_" src="../../icon/trumpet.png" ></image>
        <!-- 选择框 -->
       <view class="choice">
         <text class="_type">请选择牙刷类型</text>

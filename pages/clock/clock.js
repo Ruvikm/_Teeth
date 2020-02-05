@@ -2,8 +2,13 @@ var intervalT;
 var IntervalT;
 var context = wx.createCanvasContext('canvass');
 var Context = wx.createCanvasContext('Can');
+const AudioContext = wx.createInnerAudioContext();
+const audioContext = wx.createInnerAudioContext();
 var current_choice=999;
 var Current_choice=999;
+var Flag = 1;
+var Flag = 1;
+
 Page({
 
   /**
@@ -23,10 +28,15 @@ Page({
         "id": "1",
         "text": "普通牙刷"
       }],
-    poster: 'http://p1.music.126.net/GlV130UzFe2hEofOpo9k2g==/109951163314358137.jpg?param=130y130',
-      name: '刷牙歌',
-      author: '宝宝巴士',
-      src: 'https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786',
+      // poster: 'http://p1.music.126.net/GlV130UzFe2hEofOpo9k2g==/109951163314358137.jpg?param=130y130',
+      // name: '刷牙歌',
+      // author: '宝宝巴士',
+      // src: 'https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786',
+
+      // poster: 'http://p1.music.126.net/GlV130UzFe2hEofOpo9k2g==/109951163314358137.jpg?param=130y130',
+      // name: '刷牙歌',
+      // author: '宝宝巴士',
+      // src: 'https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786',
   },
     //事件处理函数 点击text
     toast: function() {
@@ -95,6 +105,11 @@ Page({
   },
 
   but:function(e){
+    // 播放背景音乐
+    
+    AudioContext.src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+    AudioContext.play();
+
     clearInterval(intervalT);//重新清空开始画圆
     this.setData({
       text:'重新开始'
@@ -114,7 +129,7 @@ Page({
     var n;
     var m;
     var x;
-    if(current_choice=="自动牙刷")
+    if(current_choice=="电动牙刷")
       {
           n = 120;
           m = 120;
@@ -171,6 +186,10 @@ Page({
     }, 1000);
   },
   But:function(e){
+    // 播放背景音乐
+    audioContext.src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E6%B5%85%E9%87%8E%E9%9A%BC%E4%BA%BA%20-%20%E3%81%99%E3%81%90%E3%81%9D%E3%81%B0%E3%81%AE%E5%BD%BC%E6%96%B9.mp3?sign=6c9dc362267cdf3c35638e0676daaf21&t=1580909489";
+    audioContext.play();
+
     clearInterval(IntervalT);//重新清空开始画圆
     this.setData({
       _text:'重新开始'
@@ -191,7 +210,7 @@ Page({
     var n;// 倒计时圈中的文字显示
     var m;
     var x;
-    if(Current_choice=="自动牙刷")
+    if(Current_choice=="电动牙刷")
       {
           n = 120;
           m = 120;
@@ -245,6 +264,19 @@ Page({
       }
       drawInnerCircle();
     }, 1000);
-  }
-  
+  },
+begin:function(){
+  if(AudioContext.paused==true)
+    AudioContext.play();
+  else
+    AudioContext.pause();
+},
+
+Begin:function(){
+  if(audioContext.paused==true)
+    audioContext.play();
+  else
+    audioContext.pause();
+}
+
 })
