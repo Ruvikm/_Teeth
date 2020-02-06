@@ -27,7 +27,8 @@
         <text class="_type">请选择牙刷类型</text>
         <Select class="Choose" prop-array='{{selectArray}}' bind:myget="item_change"  ></Select>
       </view>
-      
+      <!-- 选择音乐 -->
+      <Select class="Choose2" prop-array='{{selectArray2}}' bind:myget="item_change2"  ></Select>
     </view>  
   </swiper-item> 
   <swiper-item>
@@ -53,6 +54,8 @@
         <text class="_type">请选择牙刷类型</text>
         <Select class="Choose" prop-array='{{selectArray}}' bind:myget="Item_change"></Select>
       </view>
+      <!-- 选择音乐 -->
+      <Select class="Choose2" prop-array='{{selectArray2}}' bind:myget="item_change2"  ></Select>
       </view>
       </swiper-item>
 </swiper>

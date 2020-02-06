@@ -28,6 +28,16 @@ Page({
         "id": "1",
         "text": "普通牙刷"
       }],
+      selectArray2: [{
+        "id": "1",
+        "text": "刷牙歌"
+      }, {
+        "id": "2",
+        "text": "刷牙歌"
+      },{
+        "id": "3",
+        "text": "刷牙歌"
+      }],
       // poster: 'http://p1.music.126.net/GlV130UzFe2hEofOpo9k2g==/109951163314358137.jpg?param=130y130',
       // name: '刷牙歌',
       // author: '宝宝巴士',
@@ -104,12 +114,46 @@ Page({
     Current_choice=e.detail.text;
   },
 
+  item_change2: function (e) {
+    current_choice2 = e.detail.text;
+  },
+
+  Item_change2: function (e) {
+    Current_choice2 = e.detail.text;
+  },
+
   but:function(e){
     // 播放背景音乐
-    
-    AudioContext.src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
-    AudioContext.play();
-
+    var s;
+    //随机数
+    s = Math.floor(Math.random() * 3);//Math.floor(X) =X的整数位，Math.random()的取值范围是：0 <= Math.random() < 1  随机小数
+    if(s=0)
+    {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    else if(s=1)
+    {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    else
+    {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    if (current_choice2 == "1") {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    if (current_choice2 == "2") {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    if (current_choice2 == "3") {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
     clearInterval(intervalT);//重新清空开始画圆
     this.setData({
       text:'重新开始'
@@ -187,9 +231,33 @@ Page({
   },
   But:function(e){
     // 播放背景音乐
-    audioContext.src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E6%B5%85%E9%87%8E%E9%9A%BC%E4%BA%BA%20-%20%E3%81%99%E3%81%90%E3%81%9D%E3%81%B0%E3%81%AE%E5%BD%BC%E6%96%B9.mp3?sign=6c9dc362267cdf3c35638e0676daaf21&t=1580909489";
-    audioContext.play();
-
+    var s2;
+    //随机数
+    s2 = Math.floor(Math.random() * 3);//Math.floor(X) =X的整数位，Math.random()的取值范围是：0 <= Math.random() < 1  随机小数
+    if (s2 = 0) {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    else if (s2 = 1) {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    else {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    if (Current_choice2 == "1") {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    if (Current_choice2 == "2") {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
+    if (Current_choice2 == "3") {
+      AudioContext.src = "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%88%B7%E7%89%99%E6%AD%8C.mp3?sign=44867cf32870ca6575456c6340d9bf05&t=1580609786";
+      AudioContext.play();
+    }
     clearInterval(IntervalT);//重新清空开始画圆
     this.setData({
       _text:'重新开始'
