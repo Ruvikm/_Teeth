@@ -30,13 +30,13 @@ Page({
       }],
       selectArray2: [{
         "id": "1",
-        "text": "刷牙歌"
+        "text": "1"
       }, {
         "id": "2",
-        "text": "刷牙歌"
+        "text": "2"
       },{
         "id": "3",
-        "text": "刷牙歌"
+        "text": "3"
       }],
       // poster: 'http://p1.music.126.net/GlV130UzFe2hEofOpo9k2g==/109951163314358137.jpg?param=130y130',
       // name: '刷牙歌',
