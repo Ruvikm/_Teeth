@@ -140,5 +140,30 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+  },
+
+  suggest:function() {
+    wx.showModal({
+      title: '不温馨提示',
+      content: '不接受意见（ ￣ー￣）',
+      showCancel:false,
+      success: function (res) {
+          if (res.confirm) {
+              console.log('用户点击确定')
+          }
+      }
+  })
+  },
+  SHARE:function() {
+    wx.showModal({
+      title: '温馨提示',
+      content: '请点击右上角分享(>▽<)',
+      showCancel:false,
+      success: function (res) {
+          if (res.confirm) {
+              console.log('用户点击确定')
+          }
+      }
+  })
   }
 })
