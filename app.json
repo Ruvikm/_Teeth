@@ -35,12 +35,11 @@
       },
       {
         "pagePath": "pages/data/data",
-        "text": "病例",
+        "text": "个人",
         "iconPath": "icon/my.png",
         "selectedIconPath": "icon/my_fill.png"
       }
     ]
   },
-  "sitemaplocation": "sitemap.json",
   "sitemapLocation": "sitemap.json"
 }
