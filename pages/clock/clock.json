@@ -1,3 +1,4 @@
 {"usingComponents": {
-    "Select": "/Componet/select/select"
+    "Select": "/Componet/select/select",
+    "van-button":"/Componet/dist/button/index"
   }}

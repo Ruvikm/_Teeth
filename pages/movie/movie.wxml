@@ -16,7 +16,7 @@
                     </image>
                 </view>
                 <!-- 视频按钮 -->
-                <image class="video-image-play" src="https://wx2.sinaimg.cn/mw690/007RARhYly1gbaxlk3afjj301s01sdfn.jpg" mode="scaleToFill"></image>
+                <image class="video-image-play" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/007RARhYly1gbaxlk3afjj301s01sdfn.png?sign=c5d61bd7298e389c3bd726803b202f49&t=1580996550" mode="scaleToFill"></image>
 
             </view>
 

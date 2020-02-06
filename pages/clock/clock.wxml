@@ -17,8 +17,8 @@
         </view>
 
      <!-- 开始刷牙按钮 -->
-      <view class="b">
-        <button  bindtap="but">{{text}}</button>
+      <view>
+        <van-button type="info" plain bindtap="but" class="b">{{text}}</van-button>
       </view>
 
        <!-- 倒计时 -->
@@ -59,8 +59,8 @@
         </view>
 
        <!-- 开始刷牙按钮 -->
-       <view class="a">
-          <button bindtap="But">{{_text}}</button>
+       <view>
+          <van-button bindtap="But" class="a" type="info" plain>{{_text}}</van-button>
        </view>
      
 
