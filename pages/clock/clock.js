@@ -6,6 +6,8 @@ const AudioContext = wx.createInnerAudioContext();
 const audioContext = wx.createInnerAudioContext();
 var current_choice=999;
 var Current_choice=999;
+var current_choice2 = 999;
+var Current_choice2 = 999;
 var Flag = 1;
 var Flag = 1;
 
