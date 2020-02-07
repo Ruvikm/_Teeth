@@ -38,7 +38,7 @@
 
       <view class="picture">
           <!-- 下一首音乐 -->
-        <image bindtap="next_song" class="NEXT_C" src="../../icon/47最后一页、末页、下一首.png"></image>
+        <image bindtap="next_song" class="NEXT_C" src="../../icon/next.png"></image>
 
         <!-- 静音按钮 -->
         <image bindtap="begin" class="start_" src="../../icon/trumpet.png" ></image>
@@ -81,7 +81,7 @@
       </view>
 
       <!-- 下一首音乐 -->
-       <image bindtap="Next_song" class="NEXT_C" src="../../icon/47最后一页、末页、下一首.png"></image>
+       <image bindtap="Next_song" class="NEXT_C" src="../../icon/next.png"></image>
 
       </view>
   </swiper-item>
