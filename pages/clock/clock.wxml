@@ -4,7 +4,7 @@
     <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>儿童</view>
     <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>成人</view>
 </view>
-<swiper current="{{currentData}}" class='swiper' style="height:510px;" duration="300" bindchange="bindchange">
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
 
   <!-- 儿童页 -->
   <swiper-item>
