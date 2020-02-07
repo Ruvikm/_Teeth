@@ -4,7 +4,7 @@
     <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>儿童</view>
     <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>成人</view>
 </view>
-<swiper current="{{currentData}}" class='swiper' style="height:510px;" duration="300" bindchange="bindchange">
+<swiper current="{{currentData}}" class='swiper'  duration="300" bindchange="bindchange">
 
   <!-- 儿童页 -->
   <swiper-item>
@@ -38,7 +38,7 @@
 
       <view class="picture">
           <!-- 下一首音乐 -->
-        <image bindtap="next_song" class="NEXT_C" src="../../icon/47最后一页、末页、下一首.png"></image>
+        <image bindtap="next_song" class="NEXT_C" src="../../icon/next.png"></image>
 
         <!-- 静音按钮 -->
         <image bindtap="begin" class="start_" src="../../icon/trumpet.png" ></image>
@@ -81,7 +81,7 @@
       </view>
 
       <!-- 下一首音乐 -->
-       <image bindtap="Next_song" class="NEXT_C" src="../../icon/47最后一页、末页、下一首.png"></image>
+       <image bindtap="Next_song" class="NEXT_C" src="../../icon/next.png"></image>
 
       </view>
   </swiper-item>

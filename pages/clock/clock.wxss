@@ -5,7 +5,7 @@
 .topTabSwiper{border-top: 1px solid #fffafa; border-bottom: 1px solid #ccc; zoom: 1;}
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{border-bottom: 1px solid #ff7c7c; color: #ff7c7c;}
-.swiper{width: 100%;}
+.swiper{width: 100%;height:1010rpx}
 .body{
   background-color: #fafafa;
   width: 100%;
@@ -119,7 +119,7 @@
 .start_{
   width: 8%;
   height: 6%;
-  bottom: 10rpx;
+  bottom: 20rpx;
   right: 30rpx;
   position: absolute;
 }
@@ -129,7 +129,7 @@
 .NEXT_C{
   width: 8%;
   height: 6%;
-  bottom: 10rpx;
-  right: 100rpx;
+  bottom: 20rpx;
+  right: 116rpx;
   position: absolute;
 }
