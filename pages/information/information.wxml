@@ -33,10 +33,10 @@
   <button style="width:30%;" formType="submit" >保存</button>
  </view>
 </form> -->
-<i-panel title="让别人更了解你8">
+<demo-block title="让别人更了解你8">
     <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入名字" />
     <i-input value="{{ value2 }}" type="text" title="性别" placeholder="请输入性别" />
     <i-input value="{{ value3 }}" type="number" title="年龄" placeholder="请输入年龄" />
     <i-input value="{{ value4 }}" type="number" title="联系电话" placeholder="请输入联系电话" />
     <i-input value="{{ value5 }}" type="textarea" title="个性签名" placeholder="这个人懒死了什么都没写" maxlength="50" />
-</i-panel>
+</demo-block>

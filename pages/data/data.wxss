@@ -62,9 +62,9 @@
   opacity: 0.2;
 }
 .push{
-  width: 50%;
-  height: 76%;
+  width: 30%;
+  height: 81%;
   position: absolute;
-  left: 186rpx;
-  top: 64rpx;
+  left: 258rpx;
+  top: 30rpx;
 }

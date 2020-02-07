@@ -2,6 +2,7 @@
   "navigationBarTitleText": "个人信息",
   "usingComponents": {
     "i-input": "../../Componet/dist/input/index",
-    "i-panel": "../../Componet/dist/panel/index"
+    "i-panel": "../../Componet/dist/panel/index",
+    "demo-block": "../../Componet/dist/demo-block/index"
   }
 }

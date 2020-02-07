@@ -33,7 +33,7 @@
   <van-cell title="分享小程序" is-link bindtap="SHARE"/>
 
   <van-cell title="关注公众号" is-link bind:click="showRound" />
-  <van-popup class="push" show="{{ show.round }}" round position="bottom" custom-style="height: 40%" bind:close="hideRound">
+  <van-popup show="{{ show.round }}" round position="bottom" custom-style="height: 20%" bind:close="hideRound">
     <image src="../../icon/qr_code.png" class="push"></image>
   </van-popup>
    
