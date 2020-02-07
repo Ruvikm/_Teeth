@@ -1,6 +1,14 @@
 <!--pages/information/information.wxml-->
 
 <form bindsubmit="formBindsubmit" bindreset="formReset">
+<view class="hr"></view>
+  <view bindtap="name" class='item'>
+    <view class="title">姓名</view>
+    <view class="detail2">
+    <!-- 获取数据库中的年龄 -->
+    <input name="gname" placeholder="" />
+    </view>
+  </view>
   <view class="hr"></view>
   <view bindtap="age" class='item'>
     <view class="title">年龄</view>
@@ -9,7 +17,6 @@
     <input name="gage" placeholder="" />
     </view>
   </view>
-  
   <view class="hr"></view>
   <view bindtap="sex" class='item'>
     <view class="title">性别</view>
