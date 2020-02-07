@@ -1,4 +1,6 @@
-{"usingComponents": {
+{
+  "navigationBarTitleText": "快乐刷牙",
+  "usingComponents": {
     "Select": "/Componet/select/select",
     "van-button":"/Componet/dist/button/index"
   }}

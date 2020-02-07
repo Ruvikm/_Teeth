@@ -51,7 +51,7 @@ VantComponent({
         safeAreaInsetTop: {
             type: Boolean,
             value: false
-        }
+        },
     },
     created() {
         this.observeClass();

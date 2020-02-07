@@ -10,6 +10,28 @@ Page({
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     isHide: false,
+    show: {
+      basic: false,
+      top: false,
+      bottom: false,
+      left: false,
+      right: false,
+      round: false,
+      closeIcon: false,
+      customCloseIcon: false,
+      customIconPosition: false,
+    },
+  },
+  toggle(type, show) {
+    this.setData({
+      [`show.${type}`]: show
+    });
+  },
+  showRound() {
+    this.toggle('round', true);
+  },
+  hideRound() {
+    this.toggle('round', false);
   },
   //事件处理函数
   bindViewTap: function () {
@@ -165,5 +187,8 @@ Page({
           }
       }
   })
-  }
+  },
+  Follow:function () {
+    
+  },
 })

@@ -27,8 +27,3 @@
     </scroll-view>
 </view>
 
-<!-- 公众号二维码 -->
-<view class='imagesize'>
-  <image src="/icon/qr_code.png" class='qrcode'   >
-  </image>
-</view>

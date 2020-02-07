@@ -23,50 +23,22 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
 
-  <view class="hr"></view>
-  <view class='item'>
-    <view class="title">查询病史</view>
-    <view class="detail2">
-      <text>></text>
-    </view>
-  </view>
 
-  <view class="line"></view>
+<demo-block title="病例">
+  <van-cell title="查询病史" is-link />
+  <van-cell title="我的收藏" is-link />
+</demo-block>
 
-  <view class='item'>
-    <view class="title">我的收藏</view>
-    <view class="detail2">
-      <text>></text>
-    </view>
-  </view>
+<demo-block title="其他">
+  <van-cell title="分享小程序" is-link bindtap="SHARE"/>
 
-  <view class="hr"></view>
+  <van-cell title="关注公众号" is-link bind:click="showRound" />
+  <van-popup class="push" show="{{ show.round }}" round position="bottom" custom-style="height: 40%" bind:close="hideRound">
+    <image src="../../icon/qr_code.png" class="push"></image>
+  </van-popup>
+   
 
-  <view class="item" bindtap="SHARE">
-    <view class="title">分享小程序</view>
-    <view class="detail2">
-      <text> ></text>
-    </view>
-  </view>
-
-  <view class="line"></view>
-
-  <view class="item" bindtap="suggest">
-    <view class="title" >意见反馈</view>
-    <view class="detail2">
-      <text> ></text>
-    </view>
-  </view>
-
-  <view class="line"></view>
-
-  <view class="item">
-    <view class="title">设置</view>
-    <view class="detail2">
-      <text> ></text>
-    </view>
-  </view>
-
-  <view class="hr"></view>
-  
+  <van-cell title="意见反馈" is-link  bindtap="suggest"/>
+  <van-cell title="设置" is-link />
+</demo-block>  
 </view>
