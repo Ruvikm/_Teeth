@@ -11,7 +11,7 @@
   />
 
 <view class="imagepage">
-  <image bindtap="chat" mode="widthFix" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/specialist.png?sign=795ffa0d66666ab50971706981d8fe66&t=1581074950" class="expert" ></image>
+  <image bindtap="chat" mode="widthFix" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/specialist.png?sign=92f28c3d4ca287995ef1beeb8e691064&t=1581083424" class="expert" ></image>
   <image bindtap="book" mode="widthFix" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/question.png?sign=7f3f884b7120ba84aa838f6bd642c589&t=1581074959" class="investigation" ></image>
 </view>
 <van-divider content-position="center" class="Divider">动态</van-divider>
