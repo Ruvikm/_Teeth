@@ -5,6 +5,7 @@
     "pages/clock/clock",
     "pages/data/data",
     "pages/logs/logs",
+    "pages/information/information",
     "pages/Sign_in/Sign_in"
   ],
   "window": {

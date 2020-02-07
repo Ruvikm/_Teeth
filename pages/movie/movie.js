@@ -2,15 +2,15 @@
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+  
+  //#region 页面初始数据
   data: {
     videoPlay: null,
     dataList: [],
     fullScreen:false
   },
-  
+  //#endregion
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -19,6 +19,8 @@ Page({
     wx.hideShareMenu();
   },
 
+
+  //#region  播放视频
   videoPlay: function (e) {
     var _index = e.currentTarget.dataset.id
     this.setData({
@@ -77,6 +79,9 @@ Page({
     });
 
 },
+//#endregion
+
+
   /**
    * 生命周期函数--监听页面显示
    */

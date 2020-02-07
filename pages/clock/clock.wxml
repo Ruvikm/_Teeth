@@ -4,7 +4,7 @@
     <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>儿童</view>
     <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>成人</view>
 </view>
-<swiper current="{{currentData}}" class='swiper' style="height:600px;" duration="300" bindchange="bindchange">
+<swiper current="{{currentData}}" class='swiper' style="height:510px;" duration="300" bindchange="bindchange">
 
   <!-- 儿童页 -->
   <swiper-item>
@@ -16,16 +16,19 @@
             <text id="check_1">打卡</text>
         </view>
 
-      <!-- 倒计时 -->
-      <button class="b" bindtap="but">{{text}}</button>
+     <!-- 开始刷牙按钮 -->
+      <view>
+        <van-button type="info" plain bindtap="but" class="b">{{text}}</van-button>
+      </view>
+
+       <!-- 倒计时 -->
       <view class="page-body">
         <view class="page-body-wrapper">
            <canvas canvas-id="canvass" class="canvass">{{innerText}}</canvas>
         </view>
       </view>
       
-      <!-- 静音按钮 -->
-      <image bindtap="begin" class="start_" src="../../icon/trumpet.png" ></image>
+     
 
       <!-- 选择框 -->
       <view class="choice">
@@ -33,8 +36,14 @@
         <Select class="Choose" prop-array='{{selectArray}}' bind:myget="item_change" ></Select>
       </view>
 
-      <!-- 下一首音乐 -->
-      <image bindtap="next_song" class="NEXT_C" src="../../icon/47最后一页、末页、下一首.png"></image>
+      <view class="picture">
+          <!-- 下一首音乐 -->
+        <image bindtap="next_song" class="NEXT_C" src="../../icon/47最后一页、末页、下一首.png"></image>
+
+        <!-- 静音按钮 -->
+        <image bindtap="begin" class="start_" src="../../icon/trumpet.png" ></image>
+      </view>
+    
 
     </view>  
   </swiper-item> 
@@ -49,8 +58,13 @@
             <text id="check">打卡</text>
         </view>
 
-         <!-- 倒计时 -->
-      <button class="a" bindtap="But">{{_text}}</button>
+       <!-- 开始刷牙按钮 -->
+       <view>
+          <van-button bindtap="But" class="a" type="info" plain>{{_text}}</van-button>
+       </view>
+     
+
+        <!-- 倒计时 -->
       <view class="page-body">
         <view class="page-body-wrapper">
            <canvas canvas-id="Can" class="c">{{_Text}}</canvas>
