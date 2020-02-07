@@ -1,23 +1,25 @@
 <!--pages/information/information.wxml-->
-<view class="hr"></view>
-  <view class='item'>
-    <view class="title">姓名</view>
-    <view class="detail2">
-      <text>></text>
-    </view>
-  </view>
-<view class="hr"></view>
-  <view class='item'>
+
+<form bindsubmit="formBindsubmit" bindreset="formReset">
+  <view class="hr"></view>
+  <view bindtap="age" class='item'>
     <view class="title">年龄</view>
     <view class="detail2">
-      <text>></text>
+    <!-- 获取数据库中的年龄 -->
+    <input name="gage" placeholder="" />
     </view>
   </view>
-<view class="hr"></view>
-  <view class='item'>
+  
+  <view class="hr"></view>
+  <view bindtap="sex" class='item'>
     <view class="title">性别</view>
     <view class="detail2">
-      <text>></text>
+    <!-- 获取数据库中的性别 -->
+    <input name="gsex" placeholder=""/>
     </view>
   </view>
-<view class="hr"></view>
+  <view class="hr"></view>
+ <view style="display:flex;margin-top:30px;">
+  <button style="width:30%;" formType="submit" >保存</button>
+ </view>
+</form>

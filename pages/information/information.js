@@ -7,7 +7,7 @@ Page({
   data: {
 
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -28,7 +28,12 @@ Page({
   onShow: function () {
 
   },
-
+  formBindsubmit: function (e) {
+    this.setData({
+      age: '年龄' + e.detail.value.gage,
+      sex: '性别' + e.detail.value.gsex,
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
