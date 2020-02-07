@@ -1,14 +1,27 @@
 /* pages/index/index.wxss */
 .imagepage{
+  position: absolute;
+  top: 18rpx;
   height: 200px;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center; 
 }
-.expert{
-  
-}
-.investigation{
 
+.expert{
+  margin: 10rpx;
+  width: 45%;
+  height: 50%;
+}
+
+.investigation{
+  margin: 10rpx;
+  width: 45%;
+  height: 50%;
+}
+
+.divider{
+  top: 10rpx;
+  position: absolute;
 }

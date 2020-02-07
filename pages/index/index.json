@@ -1,4 +1,7 @@
 {
-  "navigationBarTitleText": "社群",
-  "usingComponents": {}
+  "navigationBarTitleText": "社区",
+  "usingComponents": {
+    "van-search":"../../Componet/dist/search",
+    "van-divider":"../../Componet/dist/divider"
+  }
 }
