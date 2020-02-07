@@ -18,7 +18,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "社群",
+        "text": "社区",
         "iconPath": "icon/home.png",
         "selectedIconPath": "icon/home_fill.png"
       },
