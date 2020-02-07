@@ -10,7 +10,7 @@ Page({
   //#region 跳页函数
   chat: function () {
     wx.navigateTo({
-      url: '../chat/chat'
+      url: '../expert/expert'
     })
   },
   //#endregion
