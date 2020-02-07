@@ -1,3 +1,6 @@
 {
-  "navigationBarTitleText": "教学视频"
+  "navigationBarTitleText": "教学视频",
+  "usingComponents": {
+    "demo-block": "../../Componet/dist/demo-block/index"
+  }
 }

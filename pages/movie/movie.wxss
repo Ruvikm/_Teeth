@@ -2,12 +2,21 @@
 
 .container{
   padding: 0rpx;
-  background-color: #e1f2fb;
+  background-color: #fafafa;
+}
+
+.item-box{
+  border: 2px solid #fff6f6;
+  border-radius: 5px;
+  background-color: #fff6f6;
+  box-shadow: 4px 1px 1px #cccccc;
+  margin: 20px;
+  position: relative;
 }
 
 .item-box .video-title-box {
   width: 100%;
-  margin-bottom: 20rpx;
+  margin-bottom: 20rpx; 
 }
 
 .item-box .video-title-box .video-title {
@@ -18,16 +27,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
-  margin: 0 auto;
+  font-size: 20px;
 }
 
 .item-box .video-image-box {
   height: 400rpx;
-  width: 100%;
+  width: 94%;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-position-x: 30rpx;
   position: relative;
+  margin: 0 auto;
 }
 
 .video-cover-box {
@@ -43,7 +53,7 @@
 }
 
 .item-box .video {
-  height: 400rpx;
+  height: 480rpx;
   width: 100%;
   /* margin: 0 30rpx 0 0; */
   position: relative;

@@ -1,27 +1,26 @@
 /* pages/index/index.wxss */
 .imagepage{
   position: absolute;
-  top: 18rpx;
-  height: 200px;
+  top: 86rpx;
+  height: 100px;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center; 
 }
 
 .expert{
   margin: 10rpx;
-  width: 45%;
-  height: 50%;
+  width: 46%;
+  height: 46%;
 }
 
 .investigation{
   margin: 10rpx;
-  width: 45%;
-  height: 50%;
+  width: 46%;
+  height: 46%;
 }
 
-.divider{
-  top: 10rpx;
-  position: absolute;
+.Divider{
+  top: 136rpx;
+  position: relative;
 }

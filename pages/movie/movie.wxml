@@ -6,7 +6,7 @@
         <view class="item-box " wx:for="{{dataList}}" wx:key="item">
             <!-- 标题层 -->
             <view class="video-title-box">
-                <view class='video-title'>{{item.title}}</view>
+                <demo-block title="{{item.title}}" class="video-title"></demo-block>
             </view>
 
             <!-- 视频图片层 -->
