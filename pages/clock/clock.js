@@ -20,6 +20,15 @@ var current_location;
 var type_flag=false;
 var Type_flag=false;
 
+// var windowHeight = wx.getSystemInfoSync().windowHeight;
+// var windowWidth = wx.getSystemInfoSync().windowWidth;
+// var ratio = 750 / windowWidth;
+// var height = windowHeight * ratio;
+// var height_s=height+"rpx"
+
+// console.log(height);
+// console.log(windowWidth);
+
 //#endregion
 
 Page({
