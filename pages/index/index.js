@@ -7,6 +7,21 @@ Page({
   data: {
 
   },
+  //#region 跳页函数
+  chat: function () {
+    wx.navigateTo({
+      url: '../chat/chat'
+    })
+  },
+  //#endregion
+
+  //#region 跳页函数
+  book: function () {
+    wx.navigateTo({
+      url: '../book/book'
+    })
+  },
+  //#endregion
 
   onChange(e) {
     this.setData({
@@ -45,6 +60,7 @@ Page({
       icon: 'none'
     });
   },
+  
   /**
    * 生命周期函数--监听页面加载
    */

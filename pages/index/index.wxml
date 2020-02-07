@@ -10,7 +10,11 @@
     bind:clear="onClear"
   />
 
-  <view class="imagepage">
-<image src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/specialist.png?sign=795ffa0d66666ab50971706981d8fe66&t=1581074950" class="expert" ></image>
-<image src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/question.png?sign=7f3f884b7120ba84aa838f6bd642c589&t=1581074959" class="investigation" ></image>
+<view class="imagepage">
+  <view bindtap="chat" class="expertpage">
+    <image src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/specialist.png?sign=795ffa0d66666ab50971706981d8fe66&t=1581074950" class="expert" ></image>
+  </view>
+  <view bindtap="book" class="investigationpage">
+    <image src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/question.png?sign=7f3f884b7120ba84aa838f6bd642c589&t=1581074959" class="investigation" ></image>
+  </view>
 </view>

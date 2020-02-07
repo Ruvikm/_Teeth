@@ -6,6 +6,8 @@
     "pages/data/data",
     "pages/logs/logs",
     "pages/information/information",
+    "pages/chat/chat",
+    "pages/book/book",
     "pages/Sign_in/Sign_in"
   ],
   "window": {
