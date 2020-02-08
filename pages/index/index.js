@@ -5,7 +5,31 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show: {
+      basic: false,
+      top: false,
+      bottom: false,
+      left: false,
+      right: false,
+      round: false,
+      closeIcon: false,
+      customCloseIcon: false,
+      customIconPosition: false,
+    },
+  },
 
+  toggle(type, show) {
+    this.setData({
+      [`show.${type}`]: show
+    });
+  },
+
+  showBasic() {
+    this.toggle('basic', true);
+  },
+
+  hideBasic() {
+    this.toggle('basic', false);
   },
   //#region 跳页函数
   chat: function () {

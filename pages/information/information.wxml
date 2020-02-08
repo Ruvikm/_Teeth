@@ -1,38 +1,5 @@
 <!-- pages/information/information.wxml -->
 
-<!-- <form bindsubmit="formBindsubmit" bindreset="formReset">
-<view class="hr"></view>
-  <view bindtap="name" class='item'>
-    <view class="title">姓名</view>
-    <view class="detail2"> -->
-
-    <!-- 获取数据库中的年龄 -->
-    <!-- <input name="gname" placeholder="" />
-    </view>
-  </view>
-  <view class="hr"></view>
-  <view bindtap="age" class='item'>
-    <view class="title">年龄</view>
-    <view class="detail2"> -->
-    <!-- 获取数据库中的年龄 -->
-    <!-- <input name="gage" placeholder="" />
-    </view>
-  </view>
-  <view class="hr"></view>
-  <view bindtap="sex" class='item'>
-    <view class="title">性别</view>
-    <view class="detail2"> -->
-
-    <!-- 获取数据库中的性别 -->
-
-    <!-- <input name="gsex" placeholder=""/>
-    </view>
-  </view>
-  <view class="hr"></view>
- <view style="display:flex;margin-top:30px;">
-  <button style="width:30%;" formType="submit" >保存</button>
- </view>
-</form> -->
 <demo-block title="让别人更了解你8">
     <i-input value="{{ value1 }}" title="姓名" autofocus placeholder="请输入名字" />
     <i-input value="{{ value2 }}" type="text" title="性别" placeholder="请输入性别" />

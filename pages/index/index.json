@@ -2,6 +2,8 @@
   "navigationBarTitleText": "社区",
   "usingComponents": {
     "van-search":"../../Componet/dist/search",
-    "van-divider":"../../Componet/dist/divider"
+    "van-divider":"../../Componet/dist/divider",
+    "van-popup":"../../Componet/dist/popup/index",
+    "van-cell":"../../Componet/dist/cell/index"
   }
 }
