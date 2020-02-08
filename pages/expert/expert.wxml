@@ -1,8 +1,8 @@
 <!--pages/expert/expert.wxml-->
 <view style="margin: 16px">专家介绍</view>
 <view class="hr"></view>
-<i-card full title="专家1" extra="咨询" thumb="https://7275-ruvik-333-1301153827.tcb.qcloud.la/expert.png?sign=44f4e1d2fd8ee882a2ffa07578349525&t=1581135356">
-    <view slot="content">简介:</view>
+<i-card full title="专家1"  extra="咨询" thumb="https://7275-ruvik-333-1301153827.tcb.qcloud.la/expert.png?sign=44f4e1d2fd8ee882a2ffa07578349525&t=1581135356">
+    <view slot="content" bindtop="jump">简介:</view>
     <!-- <view slot="footer">简介:</view> -->
 </i-card>
 <view class="hr"></view>

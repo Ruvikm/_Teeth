@@ -1,4 +1,4 @@
-// pages/expert/expert.js
+// pages/expert1/expert1.js
 Page({
 
   /**
@@ -14,14 +14,7 @@ Page({
   onLoad: function (options) {
 
   },
-  //#region 跳页函数
-  jump: function () {
-    wx.navigateTo({
-      url: '../book/book'
-    })
-  },
 
-  //#endregion
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

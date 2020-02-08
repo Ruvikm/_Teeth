@@ -9,7 +9,8 @@
     "pages/expert/expert",
     "pages/chat/chat",
     "pages/book/book",
-    "pages/Sign_in/Sign_in"
+    "pages/Sign_in/Sign_in",
+    "pages/expert1/expert1"
   ],
   "window": {
     "backgroundTextStyle": "light",
