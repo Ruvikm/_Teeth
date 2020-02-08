@@ -18,7 +18,7 @@
     bind:close="hideBasic"
   >
     <text class="tip">请截图识别二维码</text>
-    <image  class="survey" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/question.JPG?sign=dad7a998de58bc09bb29d3081afd39ee&t=1581138370" />
+    <image  class="survey" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5.png?sign=7658e10024a2e49f7155115ce9ca89c5&t=1581161527" />
   </van-popup>
 </view>
 <van-divider content-position="center" class="Divider">动态</van-divider>

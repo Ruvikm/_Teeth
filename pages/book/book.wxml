@@ -1,5 +1,6 @@
 <!--pages/book/book.wxml-->
 <i-panel title="问卷调查">
+  <i-panel title="您听说过">
     <i-radio-group current="{{current}}" bindchange="handlejudgeChange">
           <i-radio wx:for="{{judge}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}">
           </i-radio>
@@ -8,6 +9,7 @@
     <i-input value="{{ value2 }}" type="number" title="联系电话" placeholder="请输入手机号" />
     <i-input value="{{ value3 }}" type="textarea" title="详细地址" placeholder="请输入详细地址(最多50字)" maxlength="50" />
     <i-input value="{{ value4 }}" title="用户信息" disabled />
+    </i-panel>
 </i-panel>
 
 <i-panel title="无标题输入框">
