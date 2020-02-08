@@ -1,3 +1,10 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "云贝健齿",
+  "usingComponents": {
+    "i-input": "../../Componet/dist/input/index",
+    "i-button": "../../Componet/dist/button/index",
+    "i-panel": "../../Componet/dist/panel/index",
+    "i-radio-group": "../../Componet/dist/radio-group/index",
+    "i-radio": "../../Componet/dist/radio/index"
+  }
 }

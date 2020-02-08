@@ -1,2 +1,18 @@
 <!--pages/expert/expert.wxml-->
-<text>pages/expert/expert.wxml</text>
+<view style="margin: 16px">专家介绍</view>
+<view class="hr"></view>
+<i-card full title="卡片标题" extra="咨询" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card>
+<view class="hr"></view>
+<i-card full title="卡片标题" extra="咨询" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg">
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card>
+<view class="hr"></view>
+<i-card full title="卡片标题" extra="咨询" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg" i-class="card-demo">
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card>
+
