@@ -19,16 +19,16 @@ const timeAgoWithTimeStr = (dateString) => {
     var days = Math.floor(diffValue / (24 * 3600 * 1000));
 
     if (days === 0) {
-      //计算相差小时数
-      var leave1 = diffValue % (24 * 3600 * 1000); //计算天数后剩余的毫秒数
+      // 计算相差小时数
+      var leave1 = diffValue % (24 * 3600 * 1000); // 计算天数后剩余的毫秒数
       var hours = Math.floor(leave1 / (3600 * 1000));
       if (hours === 0) {
-        //计算相差分钟数
-        var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数
+        // 计算相差分钟数
+        var leave2 = leave1 % (3600 * 1000); // 计算小时数后剩余的毫秒数
         var minutes = Math.floor(leave2 / (60 * 1000));
         if (minutes === 0) {
-          //计算相差秒数
-          var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数
+          // 计算相差秒数
+          var leave3 = leave2 % (60 * 1000); // 计算分钟数后剩余的毫秒数
           var seconds = Math.round(leave3 / 1000);
           return seconds + ' 秒前';
         }
@@ -49,21 +49,21 @@ const timeAgoWithTimeStr = (dateString) => {
 }
 
 function getTime() {
-  //获取当前时间戳  
+  // 获取当前时间戳
   var timestamp = Date.parse(new Date());
   var n = timestamp;
   var date = new Date(n);
-  //年  
+  // 年
   var Y = date.getFullYear();
-  //月  
+  // 月
   var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-  //日  
+  // 日
   var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-  //时  
+  // 时
   var h = date.getHours();
-  //分  
+  // 分
   var m = date.getMinutes();
-  //秒  
+  // 秒
   var s = date.getSeconds();
   return Y + '-' + M + '-' + D + ' ' + h + ":" + m + ":" + s;
 }

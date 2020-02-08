@@ -14,7 +14,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+// 到底触发获取评论数据函数
+// 添加触发拉取评论函数
+  onReachBottom: function() {
+    let newWxComment = this.selectComponent('#NewWxComment');
+    newWxComment.onReachBottom();
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
