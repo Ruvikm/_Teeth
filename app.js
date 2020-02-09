@@ -6,7 +6,10 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    //小程序端初始化
+    wx.cloud.init({
+      env:'ruvik-333',
+    })
     // 登录
     wx.login({
       success: res => {
