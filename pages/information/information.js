@@ -1,18 +1,18 @@
 // pages/information/information.js
-const db = wx.cloud.database()
-const CaseCollection = db.collection('Case')
-db.collection('Case').add({
-  // data 字段表示需新增的 JSON 数据
-  data: {
-    // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-    ID: "",
-    Record: ""
-  },
-  success: function (res) {
-    // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
-    console.log(res)
-  }
-})
+
+//#region 数据的初始化
+
+const db = wx.cloud.database();
+const CaseCollection = db.collection('Information');
+var userName;
+var usersex;
+var userage;
+var userphone;
+var usertext;
+
+//#endregion
+
+
 Page({
 
   /**
@@ -39,35 +39,54 @@ Page({
     //获取性别
     let Component_Sex = this.selectComponent('#Sex'); // 页面获取自定义组件实例
     // 通过实例调用组件事件
-    var usersex =Component_Sex.data.value;
+    usersex =Component_Sex.data.value;
     console.log(usersex);
 
     //获取年龄
     let Component_Age = this.selectComponent('#Age'); // 页面获取自定义组件实例
     // 通过实例调用组件事件
-    var userage =Component_Age.data.value;
+    userage =Component_Age.data.value;
     console.log(userage);
 
     //获取电话
     let Component_Phone = this.selectComponent('#Phone'); // 页面获取自定义组件实例
     // 通过实例调用组件事件
-    var userphone =Component_Phone.data.value;
+    userphone =Component_Phone.data.value;
     console.log(userphone);
 
     //获取个性签名
     let Component_Text = this.selectComponent('#Text'); // 页面获取自定义组件实例
     // 通过实例调用组件事件
-    var usertext =Component_Text.data.value;
+    usertext =Component_Text.data.value;
     console.log(usertext);
-    
+
+    //上传到数据库
+    Uploads();
   },
 
 
 
-
-
-
   //#endregion
+
+
+  Uploads: function(){
+    
+    db.collection('Information').add({
+      // data 字段表示需新增的 JSON 数据
+      data: {
+        // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+        ID: "",
+        Record: ""
+      },
+      success: function (res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+      }
+    })
+
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */
