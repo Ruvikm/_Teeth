@@ -65,7 +65,7 @@ Page({
     db.collection('Information').add({
       // data 字段表示需新增的 JSON 数据
       data: {
-         _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+         _id: "", // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
         Name: userName,
         Age: userage,
         Sex:usersex,
@@ -86,9 +86,8 @@ Page({
 
 
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  //#region 页面加载时用数据库获取当前用户的数据
+
   onLoad: function (options) {
     db.collection('Information').where({
       _openid: 'oedX74iTLzf9rF4-Z3LKXqIglGXI',
@@ -108,6 +107,12 @@ Page({
     
   },
 
+  //#endregion
+
+
+
+  //#region 刷新按钮
+
   refresh:function () {
     this.setData({
       userName: userName,
@@ -117,9 +122,11 @@ Page({
       usertext:usertext
     })
   },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+
+//#endregion
+  
+
+
   onReady: function () {
     
   },
@@ -148,13 +155,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    this.setData({
-      userName: userName,
-      usersex:usersex,
-      userage:userage,
-      userphone:userphone,
-      usertext:usertext
-    })
   },
 
   /**
