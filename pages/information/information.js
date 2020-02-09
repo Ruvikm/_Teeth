@@ -8,6 +8,59 @@ Page({
 
   },
   
+  //#region 保存input里的内容
+
+  userNameInput: function (e) {
+   console.log(e.value)
+    this.setData({
+    userName: e.value
+    })
+  },
+  userSexInput: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+    usersex: e.detail.value
+    })
+  },
+  userAgeInput: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+    userage: e.detail.value
+    })
+  },
+  userPhoneInput: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+    userphone: e.detail.value
+    })
+  },
+  userTextInput: function (e) {
+    console.log(e.detail.value)
+    this.setData({
+    usertext: e.detail.value
+    })
+  },
+  
+  Save:function () {
+    var userName = this.data.userName;
+    console.log(userName);
+    var usersex = this.data.usersex;
+    console.log(usersex);
+    var userage = this.data.userage;
+    console.log(userage);
+    var userphone = this.data.userphone;
+    console.log(userphone);
+    var usertext = this.data.usertext;
+    console.log(usertext);
+
+  },
+
+
+
+
+
+
+  //#endregion
   /**
    * 生命周期函数--监听页面加载
    */
@@ -61,5 +114,6 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  
 })

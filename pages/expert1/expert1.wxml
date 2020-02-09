@@ -1,4 +1,0 @@
-<!--pages/expert1/expert1.wxml-->
-<view >
-    <NewWxComment id="NewWxComment" articleTitle="专家咨询"  contentLen='1'></NewWxComment>
-</view>

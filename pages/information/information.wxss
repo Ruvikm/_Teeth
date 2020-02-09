@@ -1,2 +1,11 @@
 /* pages/information/information.wxss */
-
+.Sa{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  height: 150rpx;
+  width: 100%;
+  color:blue;
+  bottom: 150rpx;
+  position: absolute;
+}
