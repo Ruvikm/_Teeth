@@ -26,14 +26,15 @@ Page({
     usertext:''
   },
   
-  //#region 保存input里的内容
+  //#region 保存input里的内容并上传到服务器的数据库里
 
   
   Save:function () {
     //获取姓名
-    let Component_Name = this.selectComponent('#Name'); // 页面获取自定义组件实例
+    
     // 通过实例调用组件事件
-    var userName =Component_Name.data.value;
+    let Component_Name = this.selectComponent('#Name'); // 页面获取自定义组件实例
+    userName =Component_Name.data.value;
     console.log(userName);
 
     //获取性别
@@ -61,22 +62,15 @@ Page({
     console.log(usertext);
 
     //上传到数据库
-    Uploads();
-  },
-
-
-
-  //#endregion
-
-
-  Uploads: function(){
-    
     db.collection('Information').add({
       // data 字段表示需新增的 JSON 数据
       data: {
-        // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-        ID: "",
-        Record: ""
+         _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
+        Name: userName,
+        Age: userage,
+        Sex:usersex,
+        Phone:userphone,
+        Sign:usertext
       },
       success: function (res) {
         // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
@@ -87,18 +81,47 @@ Page({
   },
 
 
+
+  //#endregion
+
+
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    db.collection('Information').where({
+      _openid: 'oedX74iTLzf9rF4-Z3LKXqIglGXI',
+    })
+    .get({
+      success: function(res) {
+        // res.data 是包含以上定义的两条记录的数组
+        console.log(res.data);
+        userName=res.data[0].Name;
+        usersex=res.data[0].Sex;
+        userage=res.data[0].Age;
+        userphone=res.data[0].Phone;
+        usertext=res.data[0].Sign;
+        console.log(userName);
+      }
+    })
+    
   },
 
+  refresh:function () {
+    this.setData({
+      userName: userName,
+      usersex:usersex,
+      userage:userage,
+      userphone:userphone,
+      usertext:usertext
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -125,7 +148,13 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.setData({
+      userName: userName,
+      usersex:usersex,
+      userage:userage,
+      userphone:userphone,
+      usertext:usertext
+    })
   },
 
   /**

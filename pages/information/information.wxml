@@ -9,3 +9,5 @@
 </demo-block>
 
 <van-button type="info" plain bindtap="Save" class="Sa">保存</van-button>
+
+<van-button type="info" plain bindtap="refresh" class="Re">刷新</van-button>
