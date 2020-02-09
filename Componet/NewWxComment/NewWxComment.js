@@ -104,14 +104,14 @@ Component({
         // 系统相关
         uaInfo: '',
         // 赞赏码
-        praiseQRCodeURL: 'https://gitee.com/yicm/Images/raw/master/common/wx_appreciation_code.jpg',
+        praiseQRCodeURL: '',
         // 授权相关
         showAurButton: false,
         isMenuboxShow: false,
         isMenuboxLoad: true,
         enableComment: true,
         menuBackgroup: false,
-        isLoginPopup: false,
+        isLoginPopup: true,
         userInfo: {},
         // 评论相关
         commentTabName: 'Comment',

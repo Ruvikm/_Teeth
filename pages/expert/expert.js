@@ -69,5 +69,9 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  onReachBottom: function() {
+    let newWxComment = this.selectComponent('#NewWxComment');
+    newWxComment.onReachBottom();
+}
 })

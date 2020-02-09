@@ -34,7 +34,7 @@ Page({
   //#region 跳页函数
   chat: function () {
     wx.navigateTo({
-      url: '../expert1/expert1'
+      url: '../expert/expert'
     })
   },
   //#endregion
