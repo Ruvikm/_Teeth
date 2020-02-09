@@ -19,54 +19,47 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userName:'',
+    usersex:'',
+    userage:'',
+    userphone:'',
+    usertext:''
   },
   
   //#region 保存input里的内容
 
-  userNameInput: function (e) {
-   console.log(e.value)
-    this.setData({
-    userName: e.value
-    })
-  },
-  userSexInput: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-    usersex: e.detail.value
-    })
-  },
-  userAgeInput: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-    userage: e.detail.value
-    })
-  },
-  userPhoneInput: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-    userphone: e.detail.value
-    })
-  },
-  userTextInput: function (e) {
-    console.log(e.detail.value)
-    this.setData({
-    usertext: e.detail.value
-    })
-  },
   
   Save:function () {
-    var userName = this.data.userName;
+    //获取姓名
+    let Component_Name = this.selectComponent('#Name'); // 页面获取自定义组件实例
+    // 通过实例调用组件事件
+    var userName =Component_Name.data.value;
     console.log(userName);
-    var usersex = this.data.usersex;
-    console.log(usersex);
-    var userage = this.data.userage;
-    console.log(userage);
-    var userphone = this.data.userphone;
-    console.log(userphone);
-    var usertext = this.data.usertext;
-    console.log(usertext);
 
+    //获取性别
+    let Component_Sex = this.selectComponent('#Sex'); // 页面获取自定义组件实例
+    // 通过实例调用组件事件
+    var usersex =Component_Sex.data.value;
+    console.log(usersex);
+
+    //获取年龄
+    let Component_Age = this.selectComponent('#Age'); // 页面获取自定义组件实例
+    // 通过实例调用组件事件
+    var userage =Component_Age.data.value;
+    console.log(userage);
+
+    //获取电话
+    let Component_Phone = this.selectComponent('#Phone'); // 页面获取自定义组件实例
+    // 通过实例调用组件事件
+    var userphone =Component_Phone.data.value;
+    console.log(userphone);
+
+    //获取个性签名
+    let Component_Text = this.selectComponent('#Text'); // 页面获取自定义组件实例
+    // 通过实例调用组件事件
+    var usertext =Component_Text.data.value;
+    console.log(usertext);
+    
   },
 
 
