@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "Card 卡片",
   "usingComponents": {
-    "i-card": "../../Componet/dist/card/index",
-    "NewWxComment": "/Componet/NewWxComment/NewWxComment"
+    "i-card": "../../Componet/dist/card/index"
+    
   }
 }

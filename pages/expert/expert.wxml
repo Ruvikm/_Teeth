@@ -15,7 +15,5 @@
     <view slot="content">简介:</view>
     <!-- <view slot="footer">尾部内容</view> -->
 </i-card>
-<view class="comments">
-    <NewWxComment id="NewWxComment" articleTitle="专家咨询"  contentLen='1'></NewWxComment>
-</view>
+
 
