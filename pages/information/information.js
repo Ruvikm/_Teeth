@@ -70,6 +70,8 @@ Page({
 
   
   Save:function () {
+
+    
     //#region 获取用户的输入信息
 
     //获取姓名
