@@ -1,11 +1,13 @@
 <!-- pages/information/information.wxml -->
 
 <demo-block title="让别人更了解你8">
-    <i-input value="{{ userName }}" bindchange="userNameInput" type="textarea" title="姓名"  placeholder="请输入名字" />
-    <i-input value="{{ usersex }}" bindchange="userSexInput" type="textarea" title="性别"  placeholder="请输入性别" />
-    <i-input value="{{ userage}}" bindchange="userAgeInput" type="textarea" title="年龄"  placeholder="请输入年龄" />
-    <i-input value="{{ userphone }}" bindchange="userPhoneInput" type="textarea" title="联系电话"  placeholder="请输入联系电话" />
-    <i-input value="{{ usertext }}" bindchange="userTextInput" type="textarea" title="个性签名"  placeholder="这个人懒死了什么都没写" maxlength="50" />
+    <i-input  value="{{ userName }}"  id="Name" type="textarea" title="姓名"  placeholder="请输入名字" />
+    <i-input  value="{{ usersex }}"  id="Sex" type="textarea" title="性别"  placeholder="请输入性别" />
+    <i-input value="{{ userage}}"  id="Age" type="textarea" title="年龄"  placeholder="请输入年龄" />
+    <i-input value="{{ userphone }}"  id="Phone" type="textarea" title="联系电话"  placeholder="请输入联系电话" />
+    <i-input value="{{ usertext }}"  id="Text" type="textarea" title="个性签名"  placeholder="这个人懒死了什么都没写" maxlength="50" />
 </demo-block>
 
 <van-button type="info" plain bindtap="Save" class="Sa">保存</van-button>
+
+<van-button type="info" plain bindtap="refresh" class="Re">刷新</van-button>

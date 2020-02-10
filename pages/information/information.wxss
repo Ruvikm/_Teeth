@@ -1,11 +1,19 @@
 /* pages/information/information.wxss */
 .Sa{
-  display: flex;
-  flex-direction:column;
-  justify-content: center;
   height: 150rpx;
   width: 100%;
   color:blue;
   bottom: 150rpx;
+  left: 200rpx;
   position: absolute;
 }
+
+.Re{
+  height: 150rpx;
+  width: 100%;
+  color:blue;
+  bottom: 150rpx;
+  left: 440rpx;
+  position: absolute;
+}
+

@@ -1,7 +1,4 @@
 /* pages/clock/clock.wxss */
-page{
-  overflow:hidden;
-}
 
 /* 滑块页面 */
 .tab{float: left; width: 50%;text-align: center;padding: 10rpx 0; }
