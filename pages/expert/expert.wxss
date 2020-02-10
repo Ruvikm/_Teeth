@@ -1,9 +1,0 @@
-/* pages/expert/expert.wxss */
-.card-demo image {
-  border-radius: 50%;
-}
-.hr {
-  width: 100%;
-  height: 15px;
-  background-color: #f4f5f6;
-}

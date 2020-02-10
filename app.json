@@ -4,17 +4,18 @@
     "pages/movie/movie",
     "pages/clock/clock",
     "pages/data/data",
-    "pages/logs/logs",
     "pages/information/information",
-    "pages/expert/expert",
-    "pages/chat/chat",
-    "pages/book/book",
-    "pages/Sign_in/Sign_in"
+    "pages/Sign_in/Sign_in",
+    "pages/home/home",
+    "pages/publish/publish",
+    "pages/homeDetail/homeDetail",
+    "pages/history/history",
+    "pages/collect/collect",
+    "pages/replay/replay"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#b0deff",
-    "navigationBarTitleText": "云贝健齿",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
