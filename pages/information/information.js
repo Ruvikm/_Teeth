@@ -19,7 +19,7 @@ var flag = true;
 
 
 Page({
-
+  
 
 //#region 获取openid
 
@@ -65,6 +65,7 @@ Page({
     userphone:'',
     usertext:''
   },
+  
   
   //#region 保存input里的内容并上传到服务器的数据库里，如果用户只是修改数据，则单独修改数据库里变化的数据
 
@@ -146,7 +147,7 @@ Page({
         }
       })
     }
-
+    
   },
 
 
@@ -205,7 +206,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+      this.setData({
+        userName: userName,
+        usersex: usersex,
+        userage: userage,
+        userphone: userphone,
+        usertext: usertext
+      })
   },
   /**
    * 生命周期函数--监听页面隐藏
