@@ -29,6 +29,17 @@ Page({
     })
   },
 
+  onCollectClick:function(){
+    wx.navigateTo({
+      url: '../collect/collect',
+    })
+  },
+
+  onHistoryClick:function(event){
+    wx.navigateTo({
+      url: '../history/history',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
