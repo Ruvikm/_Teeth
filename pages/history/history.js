@@ -59,7 +59,13 @@ Page({
     
   },
 
+  onReady: function () {
+    console.log("onReady结束")
+  },
 
+  onShow: function () {
+    console.log("onShow结束")
+},
   /**
    * 生命周期函数--监听页面加载
    */
@@ -67,7 +73,7 @@ Page({
     that = this
     that.getData(that.data.page);
     console.log(OpenId);
-
+    console.log("onLoad结束")
   },
   /**
    * 获取列表数据

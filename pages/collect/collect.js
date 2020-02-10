@@ -22,10 +22,14 @@ Page({
   onLoad: function(options) {
     that = this;
     that.getData(that.data.page);
+    console.log("onLoad结束")
   },
 
+  onReady: function () {
+    console.log("onReady结束")
+  },
   onShow: function() {
-     
+    console.log("onShow结束")
   },
   /**
    * 获取列表数据

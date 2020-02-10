@@ -1,5 +1,5 @@
 <!--miniprogram/pages/collect/collect.wxml-->
-<block wx:for='{{topics}}' wx:for-index="idx">
+<block wx:for='{{topics}}' wx:key="key" wx:for-index="idx">
   <view class='container' bindtap='onItemClick' data-topicId='{{item._id}}'>
     <view class='container-content'>
       <view class='user-info'>
@@ -14,7 +14,7 @@
         <block wx:if="{{item.content != ''}} && {{item.images.length > 0}}">
           <text class='content-text'>{{item.content}}</text>
           <scroll-view class='content-scroll' scroll-x='true'>
-            <block wx:for="{{item.images}}">
+            <block wx:for="{{item.images}}" wx:key="key">
               <image class='content-img' src='{{item}}' mode='aspectFill'></image>
             </block>
           </scroll-view>
