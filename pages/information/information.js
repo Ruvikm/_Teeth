@@ -160,7 +160,8 @@ Page({
 
   onLoad: function (options) {
     console.log(OPEN_ID);
-    db.collection('Information').where({
+    db.collection('Information')
+    .where({
       _openid: OPEN_ID,
     })
     .get({
@@ -175,7 +176,6 @@ Page({
         flag = false;
       }
     })
-    
   },
 
   //#endregion

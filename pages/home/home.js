@@ -42,7 +42,8 @@ Page({
       .get({
         success: function(res) {
           // res.data 是包含以上定义的两条记录的数组
-          console.log("数据：" + res.data)
+          console.log("数据：")
+          console.log(res.data)
           if (!res.data.length<=0) {
             that.setData({
               tishi: "暂时没有留言哦~"
@@ -60,7 +61,6 @@ Page({
           // }
           that.setData({
             topics: that.data.topics,
-           
           })
           wx.hideNavigationBarLoading(); //隐藏加载
           wx.stopPullDownRefresh();
