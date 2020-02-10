@@ -42,8 +42,8 @@ Page({
       .get({
         success: function(res) {
           // res.data 是包含以上定义的两条记录的数组
-          console.log("数据：")
-          console.log(res.data)
+          // console.log("数据：")
+          // console.log(res.data)
           if (!res.data.length<=0) {
             that.setData({
               tishi: "暂时没有留言哦~"

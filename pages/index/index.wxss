@@ -1,7 +1,7 @@
 /* pages/index/index.wxss */
 .imagepage{
   position: absolute;
-  top: 86rpx;
+  top: 40rpx;
   height: 100px;
   width: 100%;
   display: flex;
@@ -21,7 +21,12 @@
 }
 
 .Divider{
-  top: 136rpx;
+  top: 120rpx;
+  position: relative;
+}
+
+.guide{
+  top: -20rpx;
   position: relative;
 }
 
@@ -40,4 +45,9 @@
   text-align: center;
   display: flex;
   justify-content: center;
+}
+
+.professor{
+  position: relative;
+  top: 120rpx;
 }

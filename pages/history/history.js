@@ -1,7 +1,7 @@
 const app = getApp()
 var that
 const db = wx.cloud.database();
-
+var OpenId = wx.getStorageSync('openid');
 Page({
 
   /**
@@ -16,33 +16,47 @@ Page({
   },
 
   delete_content: function (event){
-    var id = event.currentTarget.dataset.topicid;//获取删除的id
-    console.log(id);
-    if (id) {
-      const db = wx.cloud.database()
-      db.collection('topic').doc(id).remove({
-        success: function (res){
-          wx.showToast({
-            title: '删除成功',
-          })
-          this.setData({
-            counterId: '',
-            count: null,
-          })
-        },
-        fail: function (res){
-          wx.showToast({
-            icon: 'none',
-            title: '删除失败',
-          })
-          console.error('[数据库] [删除记录] 失败：', err)
-        }
-      })
-    } else {
-      wx.showToast({
-        title: '无记录可删，请见创建一个记录',
-      })
-    }
+    wx.showModal({
+      title: '温馨提示',
+      content: '确认删除此条记录吗',
+      success: function (res) {
+          if (res.confirm) {
+              console.log('用户点击确定')
+              var id = event.currentTarget.dataset.topicid;//获取删除的id
+            console.log(id);
+            if (id) {
+              const db = wx.cloud.database()
+              db.collection('topic').doc(id).remove({
+                success: function (res){
+                  wx.showToast({
+                    title: '删除成功',
+                  })
+                  this.setData({
+                    counterId: '',
+                    count: null,
+                  })
+                },
+                fail: function (res){
+                  wx.showToast({
+                    icon: 'none',
+                    title: '删除失败',
+                  })
+                  console.error('[数据库] [删除记录] 失败：', err)
+                }
+              })
+            } else {
+              wx.showToast({
+                title: '无记录可删，请见创建一个记录',
+              })
+            }
+
+          }else{
+             console.log('用户点击取消')
+          }
+
+      }
+  })
+    
   },
 
 
@@ -52,6 +66,7 @@ Page({
   onLoad: function (options) {
     that = this
     that.getData(that.data.page);
+    console.log(OpenId);
 
   },
   /**
@@ -69,7 +84,7 @@ Page({
     try {
       db.collection('topic')
         .where({
-          _openid: app.globalData.openid, // 填入当前用户 openid
+          _openid: OpenId, // 填入当前用户 openid
         })
         .limit(that.data.pageSize) // 限制返回数量为 10 条
         .orderBy('date', 'desc')
@@ -138,7 +153,7 @@ Page({
         const db = wx.cloud.database();
         db.collection('topic')
           .where({
-            _openid: app.globalData.openid, // 填入当前用户 openid
+            _openid: OpenId, // 填入当前用户 openid
           })
           .skip(5)
           .limit(that.data.pageSize) // 限制返回数量为 10 条

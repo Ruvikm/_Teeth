@@ -1,14 +1,5 @@
 <!--pages/index/index.wxml-->
-
-<van-search
-    value="{{ value }}"
-    show-action
-    placeholder="请输入搜索关键词"
-    bind:change="onChange"
-    bind:search="onSearch"
-    bind:cancel="onCancel"
-    bind:clear="onClear"
-  />
+<van-divider content-position="center" class="guide">导航</van-divider>
 
 <view class="imagepage">
   <image bindtap="chat" mode="widthFix" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/specialist.png?sign=92f28c3d4ca287995ef1beeb8e691064&t=1581083424" class="expert" ></image>
@@ -21,4 +12,20 @@
     <image  class="survey" src="https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E9%97%AE%E5%8D%B7%E8%B0%83%E6%9F%A5.png?sign=7658e10024a2e49f7155115ce9ca89c5&t=1581161527" />
   </van-popup>
 </view>
-<van-divider content-position="center" class="Divider">动态</van-divider>
+<van-divider content-position="center" class="Divider">专家信息</van-divider>
+<div class="professor">
+  <i-card full title="专家1"  extra="详情" thumb="https://7275-ruvik-333-1301153827.tcb.qcloud.la/expert.png?sign=44f4e1d2fd8ee882a2ffa07578349525&t=1581135356">
+      <view slot="content">简介:从细微入手，不放过任何一个影响治疗效果的细节，为患者朋友提供最高标准的诊疗服务；明天的我会感谢今天努力的自己。</view>
+      <!-- <view slot="footer">简介:</view> -->
+  </i-card>
+  <view class="hr"></view>
+  <i-card full title="专家2" extra="详情" thumb="https://7275-ruvik-333-1301153827.tcb.qcloud.la/expert.png?sign=44f4e1d2fd8ee882a2ffa07578349525&t=1581135356">
+      <view slot="content">简介:从细微入手，不放过任何一个影响治疗效果的细节，为患者朋友提供最高标准的诊疗服务；明天的我会感谢今天努力的自己。</view>
+      <!-- <view slot="footer">简介:</view> -->
+  </i-card>
+  <view class="hr"></view>
+  <i-card full title="专家3" extra="详情" thumb="https://7275-ruvik-333-1301153827.tcb.qcloud.la/expert.png?sign=44f4e1d2fd8ee882a2ffa07578349525&t=1581135356" i-class="card-demo">
+      <view slot="content">简介:从细微入手，不放过任何一个影响治疗效果的细节，为患者朋友提供最高标准的诊疗服务；明天的我会感谢今天努力的自己。</view>
+      <!-- <view slot="footer">尾部内容</view> -->
+  </i-card>
+</div>

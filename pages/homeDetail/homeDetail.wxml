@@ -1,5 +1,5 @@
 <!--miniprogram/pages/homeDetail/homeDetail.wxml-->
-<view class='container' bindtap='onItemClick'>
+<view class='container'>
   <view class='container-content'>
     <view class='user-info'>
       <image class='user-head' src='{{topic.user.avatarUrl}}' mode='aspectFill'></image>

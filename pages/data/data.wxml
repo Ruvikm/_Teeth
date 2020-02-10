@@ -39,6 +39,5 @@
    
 
   <van-cell title="意见反馈" is-link  bindtap="suggest"/>
-  <van-cell title="设置" is-link />
 </demo-block>  
 </view>

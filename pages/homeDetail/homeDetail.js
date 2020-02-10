@@ -1,6 +1,7 @@
 var that
 const db = wx.cloud.database();
 var dateA;
+var OpenId = wx.getStorageSync('openid');
 Page({
 
   /**
@@ -20,7 +21,8 @@ Page({
 
     that = this;
     that.data.id = options.id;
-    that.data.openid = options.openid;
+    that.data.openid = OpenId;
+    console.log(options.id)
     // 获取话题信息
     db.collection('topic').doc(that.data.id).get({
       success: function(res) {
@@ -35,14 +37,16 @@ Page({
     db.collection('collect')
       .where({
         _openid: that.data.openid,
-        _id: that.data.id
+        topic_id: that.data.id
 
       })
       .get({
         success: function(res) {
           if (res.data.length > 0) {
+            console.log("已喜欢")
             that.refreshLikeIcon(true)
           } else {
+            console.log("还没有喜欢")
             that.refreshLikeIcon(false)
           }
         },
@@ -65,7 +69,7 @@ Page({
       .get({
         success: function(res) {
           // res.data 包含该记录的数据
-          console.log(res)
+         // console.log(res)
           that.setData({
             replays: res.data
           })
@@ -77,10 +81,12 @@ Page({
    * 刷新点赞icon
    */
   refreshLikeIcon(isLike) {
-    that.data.isLike = isLike
+    //that.data.isLike = isLike
     that.setData({
       isLike: isLike,
     })
+
+    console.log("更新后喜欢的状态"+that.data.isLike)
   },
   // 预览图片
   previewImg: function(e) {
@@ -120,11 +126,13 @@ Page({
    * 喜欢点击
    */
   onLikeClick: function(event) {
-    console.log(that.data.isLike);
+    console.log("点击喜欢前"+that.data.isLike);
     if (that.data.isLike) {
       // 需要判断是否存在
+      console.log("执行取消喜欢")
       that.removeFromCollectServer();
     } else {
+      console.log("执行喜欢")
       that.saveToCollectServer();
     }
   },
@@ -135,7 +143,8 @@ Page({
     db.collection('collect').add({
       // data 字段表示需新增的 JSON 数据
       data: {
-        _id: that.data.id,
+        //_id: that.data.id,
+        topic_id: that.data.id,
         date: that.GetCurrentTime(),
       },
       success: function(res) {
@@ -148,7 +157,10 @@ Page({
    * 从收藏集合中移除
    */
   removeFromCollectServer: function(event) {
-    db.collection('collect').doc(that.data.id).remove({
+    db.collection('collect').where({
+      topic_id: that.data.id,
+      _openid:OpenId
+    }).remove({
 
       success: that.refreshLikeIcon(false),
     });

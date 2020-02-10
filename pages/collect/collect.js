@@ -1,6 +1,8 @@
 var that
 const db = wx.cloud.database()
 const app = getApp()
+var OpenId = wx.getStorageSync('openid');
+var flag=true;
 Page({
 
   /**
@@ -18,11 +20,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    that = this
+    that = this;
+    that.getData(that.data.page);
   },
 
   onShow: function() {
-    that.getData(that.data.page);
+     
   },
   /**
    * 获取列表数据
@@ -31,8 +34,8 @@ Page({
   getData: function(page) {
     db.collection('collect')
       .where({
-        _openid: app.globalData.openid, // 填入当前用户 openid
-      })
+        _openid: OpenId, // 填入当前用户 openid
+      }).orderBy('date', 'desc')
       .get({
         success: function(res) {
           // res.data 是包含以上定义的两条记录的数组
@@ -42,6 +45,7 @@ Page({
         },
 
       })
+      flag=false;
 
   },
   /**
@@ -51,7 +55,7 @@ Page({
     var tempTopics = {};
     // for (var i = 0; i < that.data.collects.length; i++) {
     for (var i in that.data.collects) {
-      var topicId = that.data.collects[i]._id;
+      var topicId = that.data.collects[i].topic_id;
       db.collection('topic')
         .doc(topicId)
         .get({
