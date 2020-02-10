@@ -3,6 +3,10 @@ App({
 
   onLaunch: function () {
     // 展示本地存储能力
+    this.globalData = {
+      openid: 'oedX74iTLzf9rF4-Z3LKXqIglGXI',
+      evn: 'ruvik-333'
+    }
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
@@ -38,8 +42,4 @@ App({
     })
   },
   
-  globalData: {
-    userInfo: null,
-    flag:false
-  }
 })
