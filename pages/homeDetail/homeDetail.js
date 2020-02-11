@@ -143,7 +143,7 @@ Page({
     db.collection('collect').add({
       // data 字段表示需新增的 JSON 数据
       data: {
-        //_id: that.data.id,
+        
         topic_id: that.data.id,
         date: that.GetCurrentTime(),
       },

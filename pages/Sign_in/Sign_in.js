@@ -1,53 +1,34 @@
-// pages/Sign_in/Sign_in.js
-var util = require('../../utils/util.js'); 
-Page({
 
-  /**
-   * 页面的初始数据
-   */
+Page({
+  
   data: {
     objectId: '',
     days: [],//每月的空格+日期格
     signUp: [],
     curr_year: ' ',
     curr_month:  ' ',
-    thisYear: ' ',
-    thisMonth: ' ',
-    thisDay: ' '
-
+    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    //this.setData({objectId: options.objectId});
-
     const date = new Date();
     const curr_year = date.getFullYear();
     const curr_month = date.getMonth() + 1;
     const weeks_ch = ["日", "一", "二", "三", "四", "五", "六"];
-    const thisYear = date.getFullYear();//年
-    const thisMonth = date.getMonth() + 1;//月
-    const thisDay = date.getDate();//日
-    
-    //let day = today.getDay();//周
-    console.log(thisYear, thisMonth, thisDay);
-
 
     this.calculateEmptyGrids(curr_year, curr_month);
     this.calculateDays(curr_year, curr_month);
-    this.getToday();
-   // this.onGetSignUp();
+
     this.setData({
       curr_year: curr_year,
       curr_month: curr_month,
       weeks_ch,
-      thisYear,
-      thisMonth,
-      thisDay
-
+      
     });
+
    // console.log('year: ' + curr_year + ' month: ' + curr_month);
   },
 
@@ -77,7 +58,8 @@ Page({
         for (let i = 0; i < firstDayofWeek; i++) {
           var obj = {
             date: null,
-            isSign: false
+            isSign: false,
+            isToday: false
           }
           that.data.days.push(obj);
         }
@@ -96,11 +78,17 @@ Page({
   calculateDays: function(year, month){
     var that = this;
     const thisMonthDays = this.getThisMonthDays(year, month);
+
+    const today = new Date();
+    let this_year = today.getFullYear();//年
+    let this_month = today.getMonth() + 1;//月
+    let date = today.getDate();//日
     //console.log('thisMonthDays: ' + thisMonthDays);
     for (let i = 1; i <= thisMonthDays; i++) {
       var obj = {
         date: i,
-        isSign: false
+        isSign: false,
+        isToday: false
       };
      // console.log('obj.date: ' + obj.date);
       that.data.days.push(obj);
@@ -108,8 +96,22 @@ Page({
     this.setData({
       days: that.data.days
     });
-    //console.log('days: ' + this.data.days);
-  },
+
+    if (year == this_year && month == this_month){
+      for (let i = 0; i < that.data.days.length; i++) {
+        if (that.data.days[i].date == date) {
+          that.data.days[i].isToday = true;
+          console.log('temp=' + i);
+        }
+        // console.log('istoday: ' + that.data.days[i].isToday);
+      }
+    }
+    
+    this.setData({
+      days: that.data.days
+    });
+    
+},
 
   //匹配判断当月那些日子有签到
   // onJudgrSign: function() {
@@ -127,18 +129,6 @@ Page({
   onGetSignUp: function() {
     var that = this;
     var Task_User;
-  },
-
-  //获取今天并标记
-  getToday: function() {
-    const today = new Date();
-
-    let year = today.getFullYear();//年
-    let month = today.getMonth() + 1;//月
-    let date = today.getDate();//日
-    let day = today.getDay();//周
-
-    console.log('today: ' + year + '年' + month + '月' + date + '日，第' + day + '周');
   },
 
   //控制年月，上、下月
@@ -184,5 +174,25 @@ Page({
 
     }
    
+  },
+
+  //打卡按钮
+  bindclockin: function() {
+    //点击后当前日期变色，表示打卡成功
+    // for (let i = 0; i < this.data.days.length; i++)
+    //   console.log(this.data.days[i].date);
+    for (let i = 0; i < this.data.days.length; i++){
+      if (this.data.days[i].isToday) {
+        this.data.days[i].isSign = true;
+      }
+      console.log(this.data.days[i].isSign);
+
+    }
+    this.setData({
+      days:this.data.days
+      });
+    wx.showToast({
+      title: '今日打卡成功', 
+    })
   }
 })
