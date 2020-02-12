@@ -93,7 +93,7 @@ Page({
 
     else{
       db.collection('Information').where({
-        _openid: getApp().globalData.openid,
+        _openid: getApp().globalData.global_openid,
       }).update({
         // data 传入需要局部更新的数据
         data: {
@@ -122,7 +122,7 @@ Page({
   onLoad: function (options) {
     db.collection('Information')
     .where({
-      _openid: getApp().globalData.openid,
+      _openid: getApp().globalData.global_openid,
     })
     .get({
       success: function(res) {

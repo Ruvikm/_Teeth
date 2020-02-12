@@ -1,7 +1,7 @@
 const app = getApp()
 var that
 const db = wx.cloud.database();
-var OpenId = wx.getStorageSync('openid');
+var OpenId = app.globalData.global_openid;
 Page({
 
   /**
@@ -72,8 +72,8 @@ Page({
   onLoad: function (options) {
     that = this
     that.getData(that.data.page);
-    console.log(OpenId);
     console.log("onLoad结束")
+    OpenId = app.globalData.global_openid;
   },
   /**
    * 获取列表数据
@@ -84,6 +84,9 @@ Page({
     db.collection('history').count({
       success: function (res) {
         that.data.totalCount = res.total;
+        console.log(res.total);
+        console.log("当前用户ID：");
+        console.log(OpenId);
       }
     })
     // 获取前十条
@@ -96,6 +99,7 @@ Page({
         .orderBy('date', 'desc')
         .get({
           success: function (res) {
+            console.log(res);
             that.data.topics = res.data;
             for(var i=0;i<res.data.length;i++){
               if (res.data[i].isDelete) {
@@ -125,7 +129,8 @@ Page({
     } catch (e) {
       wx.hideNavigationBarLoading();//隐藏加载
       wx.stopPullDownRefresh();
-      console.error(e);
+      //console.error(e);
+      console.log("获取失败")
     }
   },
   /**
@@ -170,14 +175,14 @@ Page({
               if (res.data.length > 0) {
                 for (var i = 0; i < res.data.length; i++) {
                   var tempTopic = res.data[i];
-                  console.log(tempTopic);
+                  //console.log(tempTopic);
                   temp.push(tempTopic);
                 }
 
                 var totalTopic = {};
                 totalTopic = that.data.topics.concat(temp);
 
-                console.log(totalTopic);
+                //console.log(totalTopic);
                 that.setData({
                   topics: totalTopic,
                 })

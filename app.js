@@ -1,11 +1,16 @@
 //app.js
 App({
 
+  globalData:{
+      global_openid: '',
+      evn: 'ruvik-333',
+  },
+
   onLaunch: function () {
+    var that=this;
     // 展示本地存储能力
     this.globalData = {
-      openid: 'wxcfcae2873cc82924',
-      evn: 'ruvik-333',
+      
     }
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -28,8 +33,9 @@ App({
           },
           success: function(res) {
             var Openid = res.data.openid; //返回openid
-            console.log(Openid)
-            wx.setStorageSync('openid',Openid);
+            //console.log(Openid)
+            that.globalData.global_openid=Openid;
+            console.log(that.globalData.global_openid);
           }
         })
       }

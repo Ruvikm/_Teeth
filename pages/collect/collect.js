@@ -1,7 +1,7 @@
 var that
 const db = wx.cloud.database()
 const app = getApp()
-var OpenId = wx.getStorageSync('openid');
+var OpenId = app.globalData.global_openid;
 var flag=true;
 Page({
 
@@ -20,6 +20,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    OpenId = app.globalData.global_openid;
     that = this;
     that.getData(that.data.page);
     console.log("onLoad结束")
@@ -36,6 +37,8 @@ Page({
    * 
    */
   getData: function(page) {
+    console.log("收藏_id:  ");
+    console.log(OpenId);
     db.collection('collect')
       .where({
         _openid: OpenId, // 填入当前用户 openid
