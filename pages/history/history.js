@@ -70,10 +70,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    OpenId = app.globalData.global_openid;
     that = this
     that.getData(that.data.page);
     console.log("onLoad结束")
-    OpenId = app.globalData.global_openid;
+    
   },
   /**
    * 获取列表数据
