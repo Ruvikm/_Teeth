@@ -2,13 +2,13 @@
 
 .container{
   padding: 0rpx;
-  background-color: #fafafa;
+  background-color: #f3f8ff;
 }
 
 .item-box{
-  border: 2px solid #fff6f6;
+  border: 2px solid #deecff;
   border-radius: 5px;
-  background-color: #fff6f6;
+  background-color: #deecff;
   box-shadow: 4px 1px 1px #cccccc;
   margin: 20px;
   position: relative;
