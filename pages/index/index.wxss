@@ -1,5 +1,6 @@
 /* pages/index/index.wxss */
 .imagepage{
+  justify-content: center;
   position: absolute;
   top: 40rpx;
   height: 100px;

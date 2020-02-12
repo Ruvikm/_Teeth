@@ -1,10 +1,13 @@
 
+const app = getApp();
+
 Page({
   
   data: {
     objectId: '',
     days: [],//每月的空格+日期格
-    signUp: [],
+    signUp: [],//签到的日期
+    queryResult: ' ',
     curr_year: ' ',
     curr_month:  ' ',
     
@@ -18,6 +21,8 @@ Page({
     const curr_year = date.getFullYear();
     const curr_month = date.getMonth() + 1;
     const weeks_ch = ["日", "一", "二", "三", "四", "五", "六"];
+    const now_year = date.getFullYear();
+    const now_month = date.getMonth() + 1;
 
     this.calculateEmptyGrids(curr_year, curr_month);
     this.calculateDays(curr_year, curr_month);
@@ -26,8 +31,19 @@ Page({
       curr_year: curr_year,
       curr_month: curr_month,
       weeks_ch,
+      now_year,
+      now_month
       
     });
+
+    if (app.globalData.openid){
+      this.setData({
+        openid: app.globalData.openid
+      })
+      console.log('【获取openid成功】' + app.globalData.openid)
+    }else {
+      console.log('【获取openid失败】')
+    }
 
    // console.log('year: ' + curr_year + ' month: ' + curr_month);
   },
@@ -101,7 +117,7 @@ Page({
       for (let i = 0; i < that.data.days.length; i++) {
         if (that.data.days[i].date == date) {
           that.data.days[i].isToday = true;
-          console.log('temp=' + i);
+          //console.log('temp=' + i);
         }
         // console.log('istoday: ' + that.data.days[i].isToday);
       }
@@ -110,25 +126,74 @@ Page({
     this.setData({
       days: that.data.days
     });
+
+    this.onGetSignUp(); // 获取当前用户签到数组signUp[]
     
 },
 
-  //匹配判断当月那些日子有签到
-  // onJudgrSign: function() {
-  //   var that = this;
-  //   var signs = that.data.signUp;
-  //   var daysArr = that.data. days;
+  // 匹配判断当月哪些日子有签到
+  onJudgeSign: function() {
+    var that = this;
+    var signs = that.data.signUp; //所有打卡了的日期[]
+    var daysArr = that.data.days; //当月的日子[]
 
-  //   for (let i = 0; i< signs.length; i++) {
-  //     var current = new Date(signs[i].date.replace())
-  //     ...
-  //   }
-  // }
+    for (let i = 0; i< signs.length; i++) {
+      var current = signs[i];
+      var sign_year = current.getFullYear();
+      var sign_month = current.getMonth()+1;
+      var sign_day = current.getDate();
 
-  // 签到
+      for (let j = 0; j < daysArr.length; j++){
+        if (sign_year == this.data.curr_year && sign_month == this.data.curr_month){
+          //console.log(sign_year, this.data.curr_year, sign_month, this.data.curr_month);
+          //console.log('daysArr: ' + daysArr[j].date);
+          if (daysArr[j].date == sign_day){
+            daysArr[j].isSign = true;
+            console.log('daysArr: ' + j , daysArr[j].isSign);//正确 7 10 16 8 14 4
+           }
+          //console.log('daysArr.issign: ' + daysArr[j].isSign);
+        }
+      }
+      that.setData({
+        days: daysArr
+      })
+     
+    }
+  },
+
+  // 获取当前用户签到数组signUp[]
   onGetSignUp: function() {
     var that = this;
-    var Task_User;
+    var clock_user;
+
+    // const db=wx.cloud.database({env: 'test-dw7nb'});
+    const db = wx.cloud.database({ env: 'ruvik-333' });
+    db.collection('clock').where({
+      _openid: this.data.openid
+    }).get({
+      success: res => {
+        
+        for(let i = 0; i< res.data.length; i++){
+          // console.log(this.data.signUp);
+          var obj = res.data[i].signUp;
+          that.data.signUp.push(obj);
+        }
+        
+        that.setData({
+          signUp: that.data.signUp
+        })
+        // for (let i = 0; i < res.data.length; i++)
+        //   console.log('signUp arry22: ' + this.data.signUp[i]);
+
+        //获取成功后判断签到情况
+        this.onJudgeSign();
+
+    },
+      error: error => {
+        console.log('【数组signUp查询失败】' + error)
+      }
+    })
+
   },
 
   //控制年月，上、下月
@@ -178,21 +243,50 @@ Page({
 
   //打卡按钮
   bindclockin: function() {
-    //点击后当前日期变色，表示打卡成功
-    // for (let i = 0; i < this.data.days.length; i++)
-    //   console.log(this.data.days[i].date);
-    for (let i = 0; i < this.data.days.length; i++){
-      if (this.data.days[i].isToday) {
+    for (let i = 0; i < this.data.days.length; i++) {
+      if (this.data.days[i].isToday && this.data.days[i].isSign ===false) {//如果是今天且未打卡
         this.data.days[i].isSign = true;
+        this.setData({
+          days: this.data.days
+        });
+        this.onAdd();
+        wx.showToast({
+          title: '今日打卡成功'
+        });
+      } else{
+        wx.showToast({
+          title: '今日已打卡'
+        });
       }
-      console.log(this.data.days[i].isSign);
 
     }
-    this.setData({
-      days:this.data.days
-      });
-    wx.showToast({
-      title: '今日打卡成功', 
+    // console.log(this.data.days[i].isSign);
+  },
+
+  //打卡成功，添加打卡日期
+  onAdd: function (){
+    const db = wx.cloud.database({ env: 'ruvik-333' });
+    // const db = wx.cloud.database({ env: 'test-dw7nb' });
+    db.collection('clock').add({
+      data: {
+        signUp: new Date()
+      },
+
+    success: res=> {
+      this.setData({
+        signUp
+      })
+      console.log('【新增记录成功】' + res_id)
+    },
+
+    fail: error => {
+      console.log('【新建记录失败】' + error)
+    }
     })
+    this.onGetSignUp();
   }
+
+ 
+
+
 })

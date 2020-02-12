@@ -36,24 +36,12 @@
 
             <!-- 每月的有数字单元格 -->
             <view class="cell" wx:else>
-
-               <!-- <view wx:if="curr_year == this_year && curr_month == this_month">
-               
-                <view wx:if="days[j+k].date == today" style='background-color: gray'>
-                  <text>d {{days[j+k].date}}</text>
-                </view>
-                <view wx:else style="color:yellow">{{days[j+k].date}}</view>
-              </view>  -->
-              <!--问题：显示‘今天’失败。
-              原因：wx:if="days[j+k].date == thisDay" 数组的下标不能记录下来
-              -->
-
               <!-- 显示今日已解决，js中date增加一个bool属性isToday -->
-              <view wx:if="{{days[j+k].isToday == true & days[j+k].isSign == false}}" style='background-color:lightgreen'>
+              <view wx:if="{{days[j+k].isToday == true && days[j+k].isSign == false}}" style='background-color:lightpink'>
                 <text>{{days[j+k].date}}</text>
               </view>
 
-              <view wx:elif="{{days[j+k].isToday == true & days[j+k].isSign == true}}" style='background-color:red'>
+              <view wx:elif="{{days[j+k].isSign == true}}" style='background-color:lightgreen'>
                 <text>{{days[j+k].date}}</text>
               </view>
               <view wx:else>
@@ -65,15 +53,8 @@
       </view>    
     </view>
   </view>
-</view>
-
-<!-- <view>{{curr_year}},  {{curr_month}}</view> -->
-<!-- <view>{{days.length}}</view>
-<view wx:for="{{days.length/7}}" wx:for-index="i" wx:key="i">i = {{i}}</view>
-<view wx:for="{{days}}" wx:for-index="j" wx:key="j">j = {{j}}</view>
- -->
-
-
-<view>
-  <button class="clockin" bindtap="bindclockin"> 打卡</button>
+ 
+    <view>
+      <button class="clockin" bindtap="bindclockin">打卡</button>
+    </view>
 </view>
