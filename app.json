@@ -46,5 +46,6 @@
       }
     ]
   },
+  "cloud":true,
   "sitemapLocation": "sitemap.json"
 }

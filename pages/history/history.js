@@ -1,7 +1,7 @@
 const app = getApp()
 var that
 const db = wx.cloud.database();
-var OpenId = app.globalData.global_openid;
+var OpenId;
 Page({
 
   /**
@@ -81,6 +81,7 @@ Page({
    * 
    */
   getData: function (page) {
+    OpenId = app.globalData.global_openid;
     // 获取总数
     db.collection('history').count({
       success: function (res) {
