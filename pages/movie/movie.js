@@ -74,7 +74,8 @@ Page({
         dataList: [
             { "id": 6193654, "title": "1.有效刷牙", "content": "https://7275-ruvik-333-1301153827.tcb.qcloud.la/001%E6%9C%89%E6%95%88%E5%88%B7%E7%89%99.mp4?sign=34f7678f33a4099fdd367a8088e47ec3&t=1580548878", "cover": "https://wx4.sinaimg.cn/mw690/007RARhYly1gbawhhqqd3j313y0m6nhg.jpg" },
             { "id": 6193729, "title": "2.牙线的使用", "content": "https://7275-ruvik-333-1301153827.tcb.qcloud.la/002%E7%89%99%E7%BA%BF%E7%9A%84%E4%BD%BF%E7%94%A8.mp4?sign=5f83ad1307dd76b511718c7fe957c46e&t=1580548920", "cover": "https://wx1.sinaimg.cn/mw690/007RARhYly1gbawhhpjnaj313w0max0k.jpg" },
-            { "id": 6193504, "title": "3.牙间刷的使用", "content": "https://7275-ruvik-333-1301153827.tcb.qcloud.la/003%E7%89%99%E9%97%B4%E5%88%B7%E7%9A%84%E4%BD%BF%E7%94%A8.mp4?sign=9df378cfbd4daaa8faf541f34849915e&t=1580548943","cover": "https://wx3.sinaimg.cn/mw690/007RARhYly1gbawhhri5cj313t0m7dzo.jpg" }
+            { "id": 6193504, "title": "3.牙间刷的使用", "content": "https://7275-ruvik-333-1301153827.tcb.qcloud.la/003%E7%89%99%E9%97%B4%E5%88%B7%E7%9A%84%E4%BD%BF%E7%94%A8.mp4?sign=9df378cfbd4daaa8faf541f34849915e&t=1580548943","cover": "https://wx3.sinaimg.cn/mw690/007RARhYly1gbawhhri5cj313t0m7dzo.jpg" },
+            { "id": 6193506, "title": "4.2-6岁儿童刷牙法", "content": "https://7275-ruvik-333-1301153827.tcb.qcloud.la/f0374va5t0q.p712.1.mp4?sign=ecc28f5f7cd1ef35d609ce0f8b4355db&t=1581763265","cover": "https://7275-ruvik-333-1301153827.tcb.qcloud.la/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE(50).png?sign=e894fdf92d9b48ffa7334d12528015b7&t=1581763405"}
         ]
     });
 
