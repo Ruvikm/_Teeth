@@ -116,11 +116,3 @@ cloudbase functions:deploy --name getOpenid --path ./cloudfunctions/getOpenid
 4. 提交 Pull Request，描述变更内容与测试步骤
 
 请尽量保持代码风格一致，重要变更请在 PR 中说明兼容性或迁移说明。
-
-## 版权与许可证
-
-本仓库当前未指定许可证。建议根据需求选择合适的许可证（例如 `MIT`）。
-
----
-
-如果你希望我为这个 README 加入示例截图、CI 配置、或为云函数提供更详细的部署脚本，我可以继续帮你补充。已将该 README 添加到仓库根目录：`README.md`。
